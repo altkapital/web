@@ -14,46 +14,86 @@
             font-family: 'Liberation Sans', sans-serif;
             background-color: white;
         }
+
         .header {
             width: 100%;
             height: 1.618cm;
             background-color: black;
             display: flex;
             align-items: center;
-            padding-left: 5px; /* Padding to ensure image is not touching the edge */
+            padding-left: 5px;
             position: relative;
         }
+
         .header img {
             height: 1cm;
             width: 1cm;
-            margin-right: 1cm; /* Separación de 1cm entre la imagen y el título */
+            margin-right: 1cm;
         }
+
         .header h1 {
             color: white;
             font-size: 20px;
             margin: 0;
-            line-height: 1.618cm; /* Alineación vertical centrada */
+            line-height: 1.618cm;
         }
+
         .header a {
-            text-decoration: none; /* Elimina el subrayado en los enlaces */
+            text-decoration: none;
             color: white;
-            margin-right: 1em; /* Separación entre enlaces */
-            font-size: 17px; /* Tamaño de fuente para los enlaces */
+            margin-right: 1em;
+            font-size: 17px;
         }
+
         .nav {
             display: flex;
             align-items: center;
-            margin-left: auto; /* Alineación a la derecha */
+            margin-left: auto;
         }
+
         .marquee-bar {
             width: 100%;
-            height: 2cm; /* Ajusta la altura según sea necesario */
+            height: 2cm;
             background-color: black;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 1px; /* Separación de 1px entre la barra superior e inferior */
-            padding: 0 5px; /* Padding opcional para centrar el contenido dentro de la barra */
+            margin-top: 1px;
+            padding: 0 5px;
+        }
+
+        .ticker-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+        
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker-scroll 30s linear infinite;
+        }
+        
+        .ticker-item {
+            margin-right: 50px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ticker-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
+        
+        @keyframes ticker-scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
     </style>
 </head>
@@ -73,8 +113,40 @@
         </div>
     </div>
     <div class="marquee-bar">
-        <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
-        <gecko-coin-price-marquee-widget locale="es" dark-mode="true" outlined="true" coin-ids="" initial-currency="usd"></gecko-coin-price-marquee-widget>
+        <div class="ticker-container">
+            <div id="crypto-ticker" class="ticker"></div>
+        </div>
     </div>
+
+    <script>
+        async function fetchCryptoPrices() {
+            const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1';
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            return data;
+        }
+
+        function updateTicker(prices) {
+            const tickerContainer = document.getElementById('crypto-ticker');
+            tickerContainer.innerHTML = prices.map(crypto => 
+                `<div class="ticker-item">
+                    <img src="${crypto.image}" alt="${crypto.name} logo">
+                    ${crypto.name}: $${crypto.current_price.toFixed(2)}
+                </div>`
+            ).join('');
+        }
+
+        async function initTicker() {
+            const prices = await fetchCryptoPrices();
+            updateTicker(prices);
+            // Actualiza los precios cada minuto
+            setInterval(async () => {
+                const newPrices = await fetchCryptoPrices();
+                updateTicker(newPrices);
+            }, 60000);
+        }
+
+        initTicker();
+    </script>
 </body>
 </html>
