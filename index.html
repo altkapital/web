@@ -1,66 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 24.2.4.2 (Linux)"/>
-	<meta name="created" content="2024-08-03T02:51:13.797481413"/>
-	<meta name="changed" content="2024-08-03T03:30:52.994787109"/>
-	<style type="text/css">
-		@page { margin: 2cm }
-		p { margin-bottom: 0.25cm }
-		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt }
-		h1.cjk { font-size: 18pt }
-		h1.ctl { font-size: 18pt }
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alt Kapital</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Liberation+Sans:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Liberation Sans', sans-serif;
+            background-color: white;
+        }
+        .header {
+            width: 100%;
+            height: 1.618cm;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            padding-left: 5px; /* Padding to ensure image is not touching the edge */
+            position: relative;
+        }
+        .header img {
+            height: 1cm;
+            width: 1cm;
+            margin-right: 1cm; /* Separación de 1cm entre la imagen y el título */
+        }
+        .header h1 {
+            color: white;
+            font-size: 20px;
+            margin: 0;
+            line-height: 1.618cm; /* Alineación vertical centrada */
+        }
+        .header a {
+            text-decoration: none; /* Elimina el subrayado en los enlaces */
+            color: white;
+            margin-right: 1em; /* Separación entre enlaces */
+            font-size: 17px; /* Tamaño de fuente para los enlaces */
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto; /* Alineación a la derecha */
+        }
+        .marquee-bar {
+            width: 100%;
+            height: 2cm; /* Ajusta la altura según sea necesario */
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px; /* Separación de 1px entre la barra superior e inferior */
+            padding: 0 5px; /* Padding opcional para centrar el contenido dentro de la barra */
+        }
+    </style>
 </head>
-<body lang="es-ES" dir="ltr">
-<center>
-	<table width="100%" cellpadding="4" cellspacing="0">
-		<col width="11*"/>
-		<col width="83*"/>
-		<col width="162*"/>
-		<tr>
-			<td width="4%" height="62" bgcolor="#000000" style="background: #000000; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><p>
-				<img src="https://raw.githubusercontent.com/altkapital/web/main/images/logostaroriginal.png" name="Imagen1" align="middle" width="61" height="61" border="0"/>
-</p>
-			</td>
-			<td width="32%" bgcolor="#000000" style="background: #000000; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm"><h1 class="western">
-				<font color="#ffffff"><font size="6" style="font-size: 24pt">Alt
-				Kapital</font></font></h1>
-			</td>
-			<td width="63%" bgcolor="#000000" style="background: #000000; border: 1px solid #000000; padding: 0.1cm"><h1 class="western" align="right">
-				<font color="#ff0000"><font size="6" style="font-size: 24pt">	   
-				                               <font color="#ffbf00"> </font><font color="#ffbf00"><font size="4" style="font-size: 16pt">Inicio
-				  -   Historia   -   Comprar   -   Guardar</font></font></font></font></h1>
-			</td>
-		</tr>
-	</table>
-</center>
-<table width="100%" cellpadding="4" cellspacing="0">
-	<col width="256*"/>
-	<tr>
-		<td width="100%" valign="top" style="border-top: 1px solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0.1cm; padding-bottom: 0cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
-			<script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
-                        <gecko-coin-price-marquee-widget locale="es" dark-mode="true" outlined="true" coin-ids="" initial-currency="usd"></gecko-coin-price-marquee-widget>
-		</td>
-	</tr>
-	<tr>
-		<td width="100%" valign="top" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm"><p>
-			<br/>
-
-			</p>
-		</td>
-	</tr>
-</table>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
+<body>
+    <div class="header">
+        <a href="index.html">
+            <img src="logo1.png" alt="Logo de la Empresa">
+        </a>
+        <a href="index.html">
+            <h1>Alt Kapital</h1>
+        </a>
+        <div class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="comprar.html">Comprar</a>
+            <a href="guardar.html">Guardar</a>
+        </div>
+    </div>
+    <div class="marquee-bar">
+        <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+        <gecko-coin-price-marquee-widget locale="es" dark-mode="true" outlined="true" coin-ids="" initial-currency="usd"></gecko-coin-price-marquee-widget>
+    </div>
 </body>
 </html>
