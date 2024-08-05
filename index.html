@@ -109,6 +109,50 @@
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 10px;
+            }
+
+            .header img {
+                margin-right: 0;
+                margin-bottom: 10px;
+                height: 30px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .header a {
+                font-size: 15px;
+                margin-right: 0.5em;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .nav a {
+                margin: 5px 0;
+            }
+
+            .marquee-bar {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .ticker-container {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
