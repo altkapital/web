@@ -26,6 +26,7 @@
 
         .header {
             justify-content: space-between;
+            border-bottom: 1px solid white; /* Espacio de separación entre las barras */
         }
 
         .header img {
@@ -36,19 +37,26 @@
         .header h1 {
             font-size: 24px;
             margin: 0;
+            color: white; /* Color del texto blanco */
         }
 
-        .nav a {
-            color: white;
+        .header a {
             text-decoration: none;
+            color: white;
             margin-right: 15px;
             font-size: 17px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
         }
 
         .marquee-bar {
             justify-content: center;
             overflow: hidden;
             white-space: nowrap;
+            padding: 0; /* Sin padding adicional */
         }
 
         .ticker {
