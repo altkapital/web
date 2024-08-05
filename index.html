@@ -154,7 +154,7 @@
                 return `
                     <div class="ticker-item">
                         <img src="${crypto.image}" alt="${crypto.name} logo">
-                        ${crypto.name}: $${crypto.current_price.toFixed(2)} 
+                        ${crypto.name}: $${crypto.current_price.toFixed(2)}&nbsp;
                         <span class="${priceChangeClass}">(${crypto.price_change_percentage_24h.toFixed(2)}%)</span>
                     </div>`;
             }).join('');
