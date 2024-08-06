@@ -70,7 +70,7 @@
 
         .ticker {
             display: flex;
-            animation: ticker-scroll linear infinite;
+            animation: ticker-scroll 60s linear infinite;
             width: 100%;
         }
 
@@ -145,10 +145,6 @@
             .header2 {
                 font-size: 14px;
             }
-
-            .content1 {
-                height: auto; /* Ajustar altura para pantallas más pequeñas */
-            }
         }
     </style>
 </head>
@@ -206,11 +202,6 @@
                         <span class="${changeClass}">(${crypto.price_change_percentage_24h.toFixed(2)}%)</span>
                     </div>`;
             }).join('');
-
-            // Calculate and set the animation duration based on the number of items
-            const itemCount = prices.length;
-            const animationDuration = itemCount * 5; // 5 seconds per item
-            tickerContainer.style.animationDuration = `${animationDuration}s`;
         }
 
         async function initTicker() {
