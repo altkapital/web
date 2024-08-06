@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Liberation+Sans:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Liberation Sans', sans-serif;
+            background-color: white;
+            overflow-x: hidden; /* Evitar desbordamiento horizontal */
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .block {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            height: 3cm;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ddd; /* Agrega un borde sutil para mejor visibilidad */
+        }
+
+        .block img {
+            width: 3cm;
+            height: 3cm;
+            margin-right: 5px;
+        }
+
+        .block-text {
+            flex: 1;
+            font-size: 12px;
+            color: black;
+            text-align: justify;
+        }
+
+        @media (max-width: 600px) {
+            .block img {
+                width: 2cm;
+                height: 2cm;
+            }
+
+            .block-text {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <!-- Bloques de contenido -->
+        <div class="block" id="brick1">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La diversificación es una estrategia esencial en la inversión. Consiste en distribuir las inversiones en diferentes activos para reducir el riesgo. Al diversificar, los inversores pueden proteger su cartera contra la volatilidad del mercado y posibles pérdidas.
+            </div>
+        </div>
+
+        <div class="block" id="brick2">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                Los bonos del gobierno son considerados una inversión segura. Ofrecen una rentabilidad fija y menor riesgo en comparación con las acciones. Son una opción atractiva para quienes buscan estabilidad en sus inversiones.
+            </div>
+        </div>
+
+        <div class="block" id="brick3">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                El análisis técnico se basa en el estudio de gráficos y patrones de precios. Los inversores utilizan esta técnica para predecir movimientos futuros del mercado y tomar decisiones informadas.
+            </div>
+        </div>
+
+        <div class="block" id="brick4">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                Las criptomonedas están revolucionando el mundo financiero. Ofrecen una alternativa a las monedas tradicionales y pueden proporcionar oportunidades de inversión de alto rendimiento.
+            </div>
+        </div>
+
+        <div class="block" id="brick5">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La inversión en bienes raíces puede generar ingresos pasivos. Los propietarios de propiedades pueden alquilar sus inmuebles y obtener un flujo constante de ingresos, además de la apreciación del valor a largo plazo.
+            </div>
+        </div>
+
+        <div class="block" id="brick6">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La planificación financiera es clave para alcanzar metas económicas. Implica la creación de un presupuesto, el ahorro e inversión adecuada, y la gestión de deudas para asegurar un futuro financiero sólido.
+            </div>
+        </div>
+
+        <div class="block" id="brick7">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                Las acciones de dividendos proporcionan ingresos regulares a los inversores. Las empresas que pagan dividendos ofrecen una parte de sus ganancias a los accionistas, lo que puede ser una fuente estable de ingresos.
+            </div>
+        </div>
+
+        <div class="block" id="brick8">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La economía global está influenciada por diversos factores, como políticas monetarias, eventos internacionales y condiciones del mercado. Entender estas influencias es crucial para la toma de decisiones financieras informadas.
+            </div>
+        </div>
+
+        <div class="block" id="brick9">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                Las ETFs (fondos cotizados en bolsa) permiten a los inversores diversificar sus carteras mediante la compra de un solo activo. Estas pueden incluir una variedad de activos, como acciones, bonos o bienes raíces.
+            </div>
+        </div>
+
+        <div class="block" id="brick10">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La gestión del riesgo es una parte fundamental de cualquier estrategia de inversión. Implica identificar, evaluar y tomar medidas para minimizar los riesgos asociados con las inversiones.
+            </div>
+        </div>
+
+        <div class="block" id="brick11">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                Los fondos mutuos reúnen dinero de varios inversores para comprar una cartera diversificada de activos. Estos fondos permiten a los inversores acceder a una gestión profesional y una diversificación más amplia.
+            </div>
+        </div>
+
+        <div class="block" id="brick12">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La inversión en startups ofrece el potencial de altos rendimientos, pero también conlleva un riesgo elevado. Los inversores en startups deben estar preparados para la posibilidad de pérdidas significativas.
+            </div>
+        </div>
+
+        <div class="block" id="brick13">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La teoría de la eficiencia del mercado sugiere que los precios de los activos reflejan toda la información disponible. Esto implica que es difícil superar el mercado de manera consistente mediante el análisis de información pública.
+            </div>
+        </div>
+
+        <div class="block" id="brick14">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La inversión en metales preciosos, como el oro, puede actuar como un refugio seguro durante períodos de inestabilidad económica. Estos activos a menudo retienen su valor durante crisis financieras.
+            </div>
+        </div>
+
+        <div class="block" id="brick15">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                El análisis fundamental se basa en evaluar el valor intrínseco de una inversión mediante el estudio de datos económicos y financieros. Los inversores utilizan esta técnica para determinar si un activo está sobrevalorado o subvalorado.
+            </div>
+        </div>
+
+        <div class="block" id="brick16">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                La rentabilidad ajustada al riesgo mide el retorno de una inversión en relación con el riesgo asumido. Los inversores buscan maximizar la rentabilidad mientras minimizan el riesgo.
+            </div>
+        </div>
+
+        <div class="block" id="brick17">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                Las inversiones sostenibles buscan generar retornos financieros mientras se promueven prácticas ambientales, sociales y de gobernanza responsables. Estas inversiones pueden atraer a inversores interesados en la sostenibilidad.
+            </div>
+        </div>
+
+        <div class="block" id="brick18">
+            <img src="https://via.placeholder.com/300" alt="Imagen de ejemplo">
+            <div class="block-text">
+                Los índices bursátiles, como el S&P 500, representan el rendimiento de un grupo de acciones y son una herramienta clave para evaluar el desempeño general del mercado. Invertir en un índice puede ser una forma efectiva de diversificar una cartera.
+            </div>
+        </div>
+
+        <div class="block"
