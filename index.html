@@ -15,7 +15,7 @@
             background-color: white;
         }
 
-        .header, .marquee-bar {
+        .header1, .header2, .footer1 {
             background-color: black;
             color: white;
             padding: 10px;
@@ -24,23 +24,23 @@
             align-items: center;
         }
 
-        .header {
+        .header1 {
             justify-content: space-between;
             border-bottom: 1px solid white; /* Espacio de separación entre las barras */
         }
 
-        .header img {
+        .header1 img {
             height: 40px;
             margin-right: 10px;
         }
 
-        .header h1 {
+        .header1 h1 {
             font-size: 24px;
             margin: 0;
             color: white; /* Color del texto blanco */
         }
 
-        .header a {
+        .header1 a {
             text-decoration: none;
             color: white;
             margin-right: 15px;
@@ -52,21 +52,28 @@
             align-items: center;
         }
 
-        .marquee-bar {
+        .header2 {
             justify-content: center;
             overflow: hidden;
             white-space: nowrap;
             padding: 0; /* Sin padding adicional */
         }
 
+        .ticker-wrapper {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
         .ticker {
-            display: inline-block;
-            padding-left: 100%;
-            animation: ticker-scroll 30s linear infinite;
+            display: flex;
+            animation: ticker-scroll linear infinite;
         }
 
         .ticker-item {
-            display: inline-block;
+            display: flex;
+            align-items: center;
             margin-right: 50px;
         }
 
@@ -86,12 +93,12 @@
         }
 
         @keyframes ticker-scroll {
-            0% { transform: translateX(0); }
+            0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
 
         @media (max-width: 600px) {
-            .header h1 {
+            .header1 h1 {
                 font-size: 20px;
             }
 
@@ -100,14 +107,43 @@
                 margin-right: 10px;
             }
 
-            .marquee-bar {
+            .header2 {
                 font-size: 14px;
             }
+        }
+
+        .content1 {
+            background-color: grey;
+            height: 15cm;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .footer1 {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer1 .upper-line {
+            font-size: 10px;
+        }
+
+        .footer1 .lower-line {
+            font-size: 8px;
+        }
+
+        .footer1 .lower-line a {
+            text-decoration: none;
+            color: white;
+            margin: 0 5px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="header1">
         <div style="display: flex; align-items: center;">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/altkapital/web/main/images/logostaroriginal.png" alt="Alt Kapital Logo">
@@ -123,13 +159,28 @@
             <a href="guardar.html">Guardar</a>
         </div>
     </div>
-    <div class="marquee-bar">
-        <div id="crypto-ticker" class="ticker"></div>
+    <div class="header2">
+        <div class="ticker-wrapper">
+            <div id="crypto-ticker" class="ticker"></div>
+        </div>
+    </div>
+    <div class="content1">
+        <!-- Aquí se incluirán los bloques con resúmenes de artículos -->
+    </div>
+    <div class="footer1">
+        <div class="upper-line">
+            Copyright © Alt Kapital 2024
+        </div>
+        <div class="lower-line">
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="avisos-legales.html">Avisos Legales</a>
+        </div>
     </div>
 
     <script>
         async function fetchCryptoPrices() {
-            const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1';
+            const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1';
             const response = await fetch(apiUrl);
             return response.json();
         }
@@ -145,6 +196,11 @@
                         <span class="${changeClass}">(${crypto.price_change_percentage_24h.toFixed(2)}%)</span>
                     </div>`;
             }).join('');
+
+            // Calculate and set the animation duration based on the number of items
+            const itemCount = prices.length;
+            const animationDuration = itemCount * 5; // 5 seconds per item
+            tickerContainer.style.animationDuration = `${animationDuration}s`;
         }
 
         async function initTicker() {
