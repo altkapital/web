@@ -49,26 +49,27 @@
         }
 
         .search-container {
-            display: flex;
-            align-items: center;
+            position: relative;
             margin-right: 10px; /* Espacio antes del switch */
         }
 
         .search-container input {
-            padding: 5px;
+            padding: 5px 30px 5px 10px;
             font-size: 17px;
             border: 1px solid white;
             border-radius: 4px;
             background-color: black;
             color: white;
-            margin-right: 5px;
+            width: 200px; /* Ajusta el tamaño según lo necesites */
         }
 
-        .search-container button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: gold; /* Color de la lupa */
+        .search-container .icon {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: gold; /* Color dorado para el icono de lupa */
         }
 
         .mode-switch {
@@ -121,23 +122,12 @@
         }
 
         .ticker {
-            justify-content: center;
+            display: flex;
             overflow: hidden;
             white-space: nowrap;
             padding: 0; /* Sin padding adicional */
-        }
-
-        .ticker-wrapper {
-            display: flex;
             width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .ticker {
-            display: flex;
             animation: ticker-scroll 60s linear infinite;
-            width: 100%;
         }
 
         .ticker-item {
@@ -255,6 +245,10 @@
             background-color: #444;
             color: #e0e0e0;
         }
+
+        .dark-mode .content1 * {
+            color: #e0e0e0;
+        }
     </style>
 </head>
 <body>
@@ -268,12 +262,10 @@
             </a>
         </div>
         <div style="display: flex; align-items: center;">
-            <div class="search-container">
-                <input type="text" placeholder="Buscar...">
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M796 976L534 714q-31 26-66.5 38t-76.5 12q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 41-13.5 76.5T710 686l262 262-66 66ZM391 696q72 0 122.5-50.5T564 523q0-72-50.5-122.5T391 350q-72 0-122.5 50.5T218 523q0 72 50.5 122.5T391 696Z"/></svg>
-                </button>
-            </div>
+            <form class="search-container" id="search-form" action="search-results.html">
+                <input type="text" id="search-input" placeholder="Buscar..." name="query">
+                <span class="icon">🔍</span> <!-- Icono de lupa dorado dentro del campo de búsqueda -->
+            </form>
             <div class="mode-switch">
                 <label>
                     <span class="icon">🌞</span>
@@ -285,10 +277,8 @@
         </div>
     </div>
     <div class="header2"></div> <!-- Header2 añadido -->
-    <div class="ticker">
-        <div class="ticker-wrapper">
-            <div id="crypto-ticker" class="ticker"></div>
-        </div>
+    <div class="ticker" id="crypto-ticker">
+        <!-- Las criptomonedas se cargarán aquí por JavaScript -->
     </div>
     <div class="content1">
         <iframe src="https://altkapital.github.io/web/content1" title="Contenido de Content1"></iframe>
@@ -340,6 +330,20 @@
                 document.body.classList.add('dark-mode');
             } else {
                 document.body.classList.remove('dark-mode');
+            }
+        });
+
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                window.location.href = `search-results.html?query=${encodeURIComponent(query)}`;
+            }
+        });
+
+        document.getElementById('search-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('search-form').dispatchEvent(new Event('submit'));
             }
         });
     </script>
