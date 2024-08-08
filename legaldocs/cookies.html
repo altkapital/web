@@ -3,68 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Cookies - Alt Kapital</title>
+    <title>Alt Kapital</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/altkapital/web/main/images/favicon.png" type="image/png">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Liberation+Sans:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
+            padding: 0;
+            font-family: 'Liberation Sans', sans-serif;
+            background-color: white;
+            overflow-x: hidden; /* Evitar desbordamiento horizontal */
         }
-        h1, h2, h3 {
-            color: #333;
+
+        .header1, .header2, .footer1 {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            width: 100%;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        .header1 {
+            justify-content: space-between;
+            border-bottom: 1px solid white; /* Espacio de separación entre las barras */
+        }
+
+        .header1 img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .header1 h1 {
+            font-size: 24px;
+            margin: 0;
+            color: white; /* Color del texto blanco */
+        }
+
+        .header1 a {
+            text-decoration: none;
+            color: white;
+            margin-right: 15px;
+            font-size: 17px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header2 {
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0; /* Sin padding adicional */
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker {
+            display: flex;
+            animation: ticker-scroll 60s linear infinite;
+            width: 100%;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+            white-space: nowrap;
+        }
+
+        .ticker-item img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .positive {
+            color: green;
+        }
+
+        .negative {
+            color: red;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .content1 {
+            background-color: grey;
+            height: 15cm;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .content1 iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .footer1 {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer1 .upper-line {
+            font-size: 10px;
+        }
+
+        .footer1 .lower-line {
+            font-size: 8px;
+        }
+
+        .footer1 .lower-line a {
+            text-decoration: none;
+            color: white;
+            margin: 0 5px;
+        }
+
+        @media (max-width: 600px) {
+            .header1 h1 {
+                font-size: 20px;
+            }
+
+            .nav a {
+                font-size: 15px;
+                margin-right: 10px;
+            }
+
+            .header2 {
+                font-size: 14px;
+            }
+
+            .footer1 .upper-line {
+                font-size: 8px;
+            }
+
+            .footer1 .lower-line {
+                font-size: 6px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Política de Cookies</h1>
-        <p>
-            Esta política de cookies explica qué son las cookies y cómo Alt Kapital Co las utiliza en su sitio web. Al utilizar este sitio web, usted acepta el uso de cookies de acuerdo con esta política.
-        </p>
-        <h2>¿Qué Son las Cookies?</h2>
-        <p>
-            Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tableta, smartphone, etc.) cuando visita un sitio web. Ayudan a que el sitio web funcione correctamente, a proporcionar una mejor experiencia de usuario y a recopilar información sobre cómo se utiliza el sitio.
-        </p>
-        <h2>Tipos de Cookies que Utilizamos</h2>
-        <p>
-            Utilizamos los siguientes tipos de cookies:
-        </p>
-        <ul>
-            <li><strong>Cookies Esenciales:</strong> Estas cookies son necesarias para que el sitio web funcione y no pueden ser desactivadas en nuestros sistemas.</li>
-            <li><strong>Cookies de Rendimiento:</strong> Estas cookies nos permiten contar visitas y fuentes de tráfico para poder medir y mejorar el rendimiento de nuestro sitio.</li>
-            <li><strong>Cookies de Funcionalidad:</strong> Estas cookies permiten que el sitio web proporcione una funcionalidad y personalización mejoradas.</li>
-            <li><strong>Cookies de Publicidad:</strong> Estas cookies pueden ser colocadas en nuestro sitio por nuestros socios publicitarios para crear un perfil de sus intereses y mostrarle anuncios relevantes en otros sitios.</li>
-        </ul>
-        <h2>Responsabilidad del Usuario</h2>
-        <p>
-            Al navegar y utilizar este sitio web, usted asume plenamente su responsabilidad. Alt Kapital Co no asume ninguna responsabilidad legal por las cookies que se obtienen al usar este sitio web. Es responsabilidad del usuario gestionar las cookies en su navegador. Todos los usuarios y visitantes deben ser mayores de edad para utilizar este sitio web.
-        </p>
-        <h2>Gestión de Cookies</h2>
-        <p>
-            Usted puede controlar y/o eliminar las cookies como desee. Para más información, consulte <a href="https://www.aboutcookies.org" target="_blank">aboutcookies.org</a>. Usted puede eliminar todas las cookies que ya están en su ordenador y configurar la mayoría de los navegadores para que no se almacenen cookies. Sin embargo, si lo hace, es posible que tenga que ajustar manualmente algunas preferencias cada vez que visite un sitio y que algunos servicios y funcionalidades no funcionen.
-        </p>
-        <h2>Enlaces a Otros Sitios Web</h2>
-        <p>
-            Nuestro sitio web puede contener enlaces a otros sitios de interés. Sin embargo, una vez que haya utilizado estos enlaces para salir de nuestro sitio, debe tener en cuenta que no tenemos ningún control sobre ese otro sitio web. Por lo tanto, no podemos ser responsables de la protección y privacidad de cualquier información que usted proporcione al visitar dichos sitios y dichos sitios no se rigen por esta declaración de cookies. Debe tener cuidado y mirar la declaración de cookies aplicable al sitio web en cuestión.
-        </p>
-        <h2>Cambios en Nuestra Política de Cookies</h2>
-        <p>
-            Alt Kapital Co puede actualizar esta política de cookies en cualquier momento. Le recomendamos que revise esta página periódicamente para estar al tanto de cualquier cambio. 
-        </p>
-        <h2>Contacto</h2>
-        <p>
-            Si tiene alguna pregunta sobre esta política de cookies, puede ponerse en contacto con nosotros a través de info@altkapital.com.
-        </p>
+    <div class="header1">
+        <div style="display: flex; align-items: center;">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/altkapital/web/main/images/logostaroriginal.png" alt="Alt Kapital Logo">
+            </a>
+            <a href="index.html">
+                <h1>Alt Kapital</h1>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="comprar.html">Comprar</a>
+            <a href="guardar.html">Guardar</a>
+        </div>
     </div>
+    <div class="header2">
+        <div class="ticker-wrapper">
+            <div id="crypto-ticker" class="ticker"></div>
+        </div>
+    </div>
+    <div class="content1">
+        <iframe src="https://altkapital.github.io/web/legaldocs/cookies.html" title="Contenido de Content1"></iframe>
+    </div>
+    <div class="footer1">
+        <div class="upper-line">
+            Copyright © Alt Kapital 2024
+        </div>
+        <div class="lower-line">
+            <a href="politica-privacidad.html">Política de Privacidad</a>
+            <a href="cookies.html">Cookies</a>
+            <a href="avisos-legales.html">Avisos Legales</a>
+        </div>
+    </div>
+
+    <script>
+        async function fetchCryptoPrices() {
+            const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1';
+            const response = await fetch(apiUrl);
+            return response.json();
+        }
+
+        function updateTicker(prices) {
+            const tickerContainer = document.getElementById('crypto-ticker');
+            tickerContainer.innerHTML = prices.map(crypto => {
+                const changeClass = crypto.price_change_percentage_24h >= 0 ? 'positive' : 'negative';
+                return `
+                    <div class="ticker-item">
+                        <img src="${crypto.image}" alt="${crypto.name} logo">
+                        ${crypto.name}: $${crypto.current_price.toFixed(2)} 
+                        <span class="${changeClass}">(${crypto.price_change_percentage_24h.toFixed(2)}%)</span>
+                    </div>`;
+            }).join('');
+        }
+
+        async function initTicker() {
+            const prices = await fetchCryptoPrices();
+            updateTicker(prices);
+            setInterval(async () => {
+                const newPrices = await fetchCryptoPrices();
+                updateTicker(newPrices);
+            }, 60000);
+        }
+
+        initTicker();
+    </script>
 </body>
 </html>
