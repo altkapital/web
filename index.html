@@ -14,7 +14,6 @@
             font-family: 'Liberation Sans', sans-serif;
             background-color: white;
             overflow-x: hidden; /* Evitar desbordamiento horizontal */
-            transition: background-color 0.3s, color 0.3s;
         }
 
         .header1, .header2, .footer1 {
@@ -32,11 +31,6 @@
             border-bottom: 1px solid white; /* Espacio de separación entre las barras */
         }
 
-        .header2 {
-            height: 10px; /* Altura de 10px */
-            margin: 1px 0; /* Espacio de 1px por encima y por debajo */
-        }
-
         .header1 img {
             height: 40px;
             margin-right: 10px;
@@ -48,86 +42,36 @@
             color: white; /* Color del texto blanco */
         }
 
-        .search-container {
-            position: relative;
-            margin-right: 10px; /* Espacio antes del switch */
-        }
-
-        .search-container input {
-            padding: 5px 30px 5px 10px;
-            font-size: 17px;
-            border: 1px solid white;
-            border-radius: 4px;
-            background-color: black;
+        .header1 a {
+            text-decoration: none;
             color: white;
-            width: 200px; /* Ajusta el tamaño según lo necesites */
+            margin-right: 15px;
+            font-size: 17px;
         }
 
-        .search-container .icon {
-            position: absolute;
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            color: gold; /* Color dorado para el icono de lupa */
-        }
-
-        .mode-switch {
+        .nav {
             display: flex;
             align-items: center;
         }
 
-        .mode-switch label {
+        .header2 {
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0; /* Sin padding adicional */
+        }
+
+        .ticker-wrapper {
             display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .mode-switch input {
-            display: none;
-        }
-
-        .mode-switch .switch {
+            width: 100%;
+            overflow: hidden;
             position: relative;
-            width: 40px;
-            height: 20px;
-            background-color: #ccc;
-            border-radius: 20px;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-        }
-
-        .mode-switch .switch::before {
-            content: '';
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background-color: white;
-            border-radius: 50%;
-            top: 1px;
-            left: 1px;
-            transition: transform 0.3s;
-        }
-
-        .mode-switch input:checked + .switch {
-            background-color: #333;
-        }
-
-        .mode-switch input:checked + .switch::before {
-            transform: translateX(20px);
-        }
-
-        .mode-switch .icon {
-            font-size: 20px;
         }
 
         .ticker {
             display: flex;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 0; /* Sin padding adicional */
-            width: 100%;
             animation: ticker-scroll 60s linear infinite;
+            width: 100%;
         }
 
         .ticker-item {
@@ -165,7 +109,6 @@
             box-sizing: border-box;
             width: 100%;
             overflow: hidden;
-            transition: background-color 0.3s, color 0.3s;
         }
 
         .content1 iframe {
@@ -183,11 +126,11 @@
         }
 
         .footer1 .upper-line {
-            font-size: 12px; /* Incrementado de 10px a 12px */
+            font-size: 10px;
         }
 
         .footer1 .lower-line {
-            font-size: 10px; /* Incrementado de 8px a 10px */
+            font-size: 8px;
         }
 
         .footer1 .lower-line a {
@@ -206,48 +149,17 @@
                 margin-right: 10px;
             }
 
-            .ticker {
+            .header2 {
                 font-size: 14px;
             }
 
             .footer1 .upper-line {
-                font-size: 10px;
-            }
-
-            .footer1 .lower-line {
                 font-size: 8px;
             }
 
-            .search-container input {
-                width: 100px;
+            .footer1 .lower-line {
+                font-size: 6px;
             }
-        }
-
-        .dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-
-        .dark-mode .header1,
-        .dark-mode .header2,
-        .dark-mode .footer1 {
-            background-color: #333;
-            color: #e0e0e0;
-        }
-
-        .dark-mode .search-container input {
-            background-color: #333;
-            color: #e0e0e0;
-            border-color: #e0e0e0;
-        }
-
-        .dark-mode .content1 {
-            background-color: #444;
-            color: #e0e0e0;
-        }
-
-        .dark-mode .content1 * {
-            color: #e0e0e0;
         }
     </style>
 </head>
@@ -261,24 +173,17 @@
                 <h1>Alt Kapital</h1>
             </a>
         </div>
-        <div style="display: flex; align-items: center;">
-            <form class="search-container" id="search-form" action="search-results.html">
-                <input type="text" id="search-input" placeholder="Buscar..." name="query">
-                <span class="icon">🔍</span> <!-- Icono de lupa dorado dentro del campo de búsqueda -->
-            </form>
-            <div class="mode-switch">
-                <label>
-                    <span class="icon">🌞</span>
-                    <input type="checkbox" id="mode-switch">
-                    <span class="switch"></span>
-                    <span class="icon">🌜</span>
-                </label>
-            </div>
+        <div class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="comprar.html">Comprar</a>
+            <a href="guardar.html">Guardar</a>
         </div>
     </div>
-    <div class="header2"></div> <!-- Header2 añadido -->
-    <div class="ticker" id="crypto-ticker">
-        <!-- Las criptomonedas se cargarán aquí por JavaScript -->
+    <div class="header2">
+        <div class="ticker-wrapper">
+            <div id="crypto-ticker" class="ticker"></div>
+        </div>
     </div>
     <div class="content1">
         <iframe src="https://altkapital.github.io/web/content1" title="Contenido de Content1"></iframe>
@@ -324,28 +229,6 @@
         }
 
         initTicker();
-
-        document.getElementById('mode-switch').addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('dark-mode');
-            } else {
-                document.body.classList.remove('dark-mode');
-            }
-        });
-
-        document.getElementById('search-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const query = document.getElementById('search-input').value;
-            if (query) {
-                window.location.href = `search-results.html?query=${encodeURIComponent(query)}`;
-            }
-        });
-
-        document.getElementById('search-input').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                document.getElementById('search-form').dispatchEvent(new Event('submit'));
-            }
-        });
     </script>
 </body>
 </html>
